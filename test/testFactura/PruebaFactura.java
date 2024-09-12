@@ -11,21 +11,30 @@ import org.junit.Test;
 
 public class PruebaFactura {
 
+  
+
     @Test
-    public void testaddFactura() {
+    public void testUpdateFactura() {
+        //VARS
+        double montoAntiguo = 0;
+        double montoActualizado = 0;
+
         //INSTANCES
         Etecsa etc = new Etecsa();
         Date fechaEmision = new Date();
-        Facturas factura1 = new Facturas("14", "964", 20.56, fechaEmision);
+        Facturas factura2 = new Facturas("1010", "203", 20.56, fechaEmision);
+        etc.addFactura(factura2);
 
-        //EJECUCION DEL METODO ADDfACTURA
-        etc.addFactura(factura1);
+        /*TOMAR VALOR DEL MONTO DE LA FACTURA EN LA LISTA*/
+        montoAntiguo = etc.lista.get(0).getMontoFactura();
 
-        /*VERDADERO QUE LA LISTA YA NO ESTA VACIA*/
-        org.junit.Assert.assertTrue(!etc.lista.isEmpty());
+        /*UPDATE MONTO DE LA FACTURA Y RETOMAR VALOR DE FACTURA*/
+        etc.lista.get(0).setMontoFactura(38.99);
+        montoActualizado = etc.lista.get(0).getMontoFactura();
 
+        /*ES FALSO QUE SON IGUALES LOS VALORES ANTES
+         Y DESPUES DE ACTUALIZAR*/
+        org.junit.Assert.assertFalse(montoAntiguo == montoActualizado);
     }
-
-    
 
 }
