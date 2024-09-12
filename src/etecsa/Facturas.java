@@ -20,6 +20,13 @@ public class Facturas {
   Date fechaPago;
   boolean estado ;
 
+  
+    //Add para poderlo instanciar sin necesidad de datos
+    public Facturas() {
+    }
+  
+  
+
     public Date getFechaPago() {
         return fechaPago;
     }

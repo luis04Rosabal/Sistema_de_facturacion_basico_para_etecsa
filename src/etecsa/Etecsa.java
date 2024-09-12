@@ -14,8 +14,16 @@ import java.util.List;
  */
 public class Etecsa {
 
-    List<Facturas> lista;
+    public List<Facturas> lista = new ArrayList<>();
 
+    
+    //Add para poderlo instanciar sin necesidad de datos
+    public Etecsa() {
+    }
+
+    
+    
+    
     public List<Facturas> getLista() {
         return lista;
     }
